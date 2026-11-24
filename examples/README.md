@@ -4,9 +4,9 @@
 
 | Example | What it shows |
 | --- | --- |
+| [python/video_chat.py](python/video_chat.py) | Summarize the bundled café clip. |
 | [python/text_chat.py](python/text_chat.py) | Ask a text question. |
 | [python/image_chat.py](python/image_chat.py) | Describe the bundled café frame. |
-| [python/video_chat.py](python/video_chat.py) | Summarize the bundled café clip. |
 | [python/kv_cache_chat.py](python/kv_cache_chat.py) | Reuse context across three text turns. |
 | [c/image_chat.c](c/image_chat.c) | Describe an RGB image. |
 | [c/cache_chat.c](c/cache_chat.c) | Reuse a native cache lease across three text turns. |
@@ -18,6 +18,42 @@ Complete [Install](../README.md#1-install) and [Get the model](../README.md#2-ge
 The Python examples take no arguments. Their model path, questions and sample media paths are set in the scripts. Each uses a 64-token greedy budget with a repetition penalty of 1.0. See the [sample media credits](../demo/media/README.md#bundled-example-media) for the image and video sources and license.
 
 ## Python examples
+
+### video_chat.py
+
+Summarize `demo/samples/cafe15.mp4`. The example explicitly passes the SDK defaults: up to 12 canvases, 20 candidate frames per temporal group, and 4 canvases per group. See [video sampling](../docs/video-codec/README.md) for the supported combinations.
+
+```python
+from pandora_mage_vl import LanguageModel
+
+with LanguageModel.from_pretrained("models") as model:
+    result = model.generate(
+        [{
+            "role": "user",
+            "content": [
+                {"type": "video", "video": "demo/samples/cafe15.mp4"},
+                {"type": "text", "text": "Summarize the visible actions in this video."},
+            ],
+        }],
+        max_new_tokens=64,
+        do_sample=False,
+        repetition_penalty=1.0,
+        video_target_canvas=12,    # Total canvas budget for the video
+        video_group_size=20,       # Candidate frames sampled per temporal group
+        video_images_per_group=4,  # Canvases assembled per group
+    )
+    print(result.text)
+```
+
+```bash
+python examples/python/video_chat.py
+```
+
+Output (excerpt)
+
+```text
+A man in a green jacket and blue jeans is standing in a room with a white tiled floor.
+```
 
 ### text_chat.py
 
@@ -45,20 +81,6 @@ Output
 
 ```text
 A group of people are gathered in a room, with some standing and others sitting.
-```
-
-### video_chat.py
-
-Summarize `demo/samples/cafe15.mp4`. The script puts the video before the instruction in the final user message.
-
-```bash
-python examples/python/video_chat.py
-```
-
-Output (excerpt)
-
-```text
-A man in a green jacket and blue jeans is standing in a room with a white tiled floor.
 ```
 
 ### kv_cache_chat.py
