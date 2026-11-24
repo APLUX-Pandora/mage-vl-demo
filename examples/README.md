@@ -69,13 +69,13 @@ Pass each follow-up through a `DynamicCache` so the model can recall words from 
 python examples/python/kv_cache_chat.py
 ```
 
-Output
+The script prints only the replies. Each row pairs a built-in prompt with its output:
 
-```text
-ACK
-Alice
-ORCHID
-```
+| Turn | Prompt | Reply |
+| --- | --- | --- |
+| 1 | My name is Alice and my secret word is ORCHID. Reply only ACK. | `ACK` |
+| 2 | What is my name? Reply only the name. | `Alice` |
+| 3 | What is my secret word? Reply only the word. | `ORCHID` |
 
 <a id="c-integration"></a>
 

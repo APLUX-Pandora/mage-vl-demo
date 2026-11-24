@@ -75,7 +75,7 @@ Open `http://<device-ip>:8080/` and choose the café clip or upload an H.264 MP4
 
 ## 4. Python Usage
 
-In the same environment, from the Demo root:
+From the Demo root, ask Mage-VL to summarize the bundled café video:
 
 ```python
 from pandora_mage_vl import LanguageModel
@@ -85,15 +85,15 @@ with LanguageModel.from_pretrained("models") as model:
         [{
             "role": "user",
             "content": [
-                {"type": "image", "image": "demo/samples/cafe-frame.png"},
-                {"type": "text", "text": "Describe the visible people and their actions."},
+                {"type": "video", "video": "demo/samples/cafe15.mp4"},
+                {"type": "text", "text": "Summarize the visible actions in this video."},
             ],
         }],
         max_new_tokens=64,
         do_sample=False,
         repetition_penalty=1.0,
     )
-    print(result.text, result.finish_reason)
+    print(result.text)
 ```
 
 The published model package defaults to 256 output tokens, greedy decoding and a repetition penalty of 1.0. This Demo example explicitly uses a 64-token budget. The Web Demo uses 48 tokens and 35 words per 15-second window, or 64 tokens and 60 words per 30-second window.
