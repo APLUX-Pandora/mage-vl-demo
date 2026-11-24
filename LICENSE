@@ -1,0 +1,9 @@
+# Licensing index
+
+- Application code, examples, C interface headers, Python binding and verification utility: Apache-2.0, except separately attributed media and third-party material.
+- APLUX-owned proprietary implementation in the native SDK: the supplied Pandora Model & SDK License Agreement. This applies only to rights APLUX owns and can license; it does not relicense upstream contributions or limit rights granted by third-party licenses.
+- Third-party portions retain their own licenses. See LICENSING.md, THIRD_PARTY_NOTICES.txt and LICENSES/.
+- The skiing video is CC BY 3.0, with the creator, source, license and modifications credited in the page and media README.
+- The SDK includes matched QNN user-space runtime libraries under their own vendor terms; see sdk/lib/qnn248/. Model files, device BSP/firmware and native LMS are supplied separately under their own terms.
+
+No blanket relicensing of this source repository is asserted.

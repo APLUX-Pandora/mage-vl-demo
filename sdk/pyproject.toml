@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pandora-mage-vl"
+version = "1.0.0"
+requires-python = ">=3.10,<3.13"
+description = "Pandora Mage-VL SDK for Linux AArch64"
+dependencies = ["av==16.1.0", "Pillow==12.3.0", "pandora-runtime>=1.0.2,<2"]

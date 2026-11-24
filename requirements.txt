@@ -1,0 +1,12 @@
+./sdk/wheels/pandora_runtime-1.0.2-py3-none-linux_aarch64.whl
+./sdk
+av==16.1.0
+Pillow==12.3.0
+blinker==1.9.0
+click==8.5.0
+Flask==3.1.3
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+Werkzeug==3.1.9
+huggingface_hub>=1.0,<2,==1.33.0

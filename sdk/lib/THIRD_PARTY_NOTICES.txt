@@ -1,0 +1,17 @@
+THIRD-PARTY NOTICES
+
+nlohmann JSON 3.12.0, Copyright (c) 2013-2025 Niels Lohmann. MIT license; complete text in LICENSES/nlohmann-json-MIT.txt.
+
+Adapted NumPy 1.26.4 scalar selection and float32 trigonometric arithmetic, Copyright (c) 2005-2023 NumPy Developers. BSD terms in LICENSES/NumPy-BSD.txt. Python wrappers and unrelated type implementations are excluded. Adaptations preserve the tested reference arithmetic.
+
+Codec-aware preprocessing was implemented in native C++ against the codec-video-prep reference, version 0.2.5, source commit b03fe0a7db4a96f34816eeee8159618c08d8dd35, https://github.com/YunyaoYan/codec-video-prep . The upstream pyproject.toml declares MIT. The permission and warranty text is retained in LICENSES/codec-video-prep-MIT.txt. Upstream source metadata is preserved without inventing an absent copyright notice. This SDK does not contain the upstream Python extension. The SDK uses the patched FFmpeg shared libraries described below.
+
+The SDK statically includes ICU 70.1, OpenCV 4.5.4, libjpeg-turbo 2.1.2 and zlib 1.2.11 with the recorded Ubuntu distribution patches. The complete upstream ICU license, including third-party dictionary terms, is in LICENSES/ICU.txt. The Ubuntu packaging notice is in LICENSES/ICU-Ubuntu.txt. See LICENSES/OpenCV.txt, LICENSES/libjpeg-turbo.txt and LICENSES/zlib.txt for the other terms. The SDK links to two independently replaceable FFmpeg shared libraries, modified by the codec-video-prep bitcost_only/full_skip patches and separately namespaced. CONFIG_GPL, CONFIG_NONFREE and CONFIG_VERSION3 are disabled. FFmpeg is LGPL-2.1-or-later. See LICENSES/FFmpeg-COPYING.LGPLv2.1 and LICENSES/FFmpeg-LICENSE.md. The SDK ffmpeg/ directory contains corresponding source, patches, namespace maps and instructions for rebuilding and replacing each library. Applicable rights to modify/relink the LGPL portions and debug those modifications are preserved.
+
+Qualcomm Genie and the Rust tokenizer are statically linked. Qualcomm’s supplied copyright notice and vendor terms apply to Genie. The Rust tokenizer’s open-source dependency notices are retained in LICENSES/Genie-Rust-Tokenizer.txt.
+
+The shared Pandora Runtime is distributed under Apache-2.0; see LICENSES/Apache-2.0.txt.
+
+Matched QNN user-space host/Stub/Skel runtime libraries are supplied in qnn248/ with vendor license and notices. Model weights and device BSP/firmware are supplied separately.
+
+OpenSSL 3 crypto is statically linked. Copyright and complete Apache-2.0 license text are retained in LICENSES/OpenSSL.txt. The native model-format vendor component retains its applicable supplier terms; this notice grants no additional rights.

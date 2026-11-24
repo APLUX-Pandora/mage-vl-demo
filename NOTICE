@@ -1,0 +1,25 @@
+Mage-VL — component licensing
+
+THIRD-PARTY NOTICES
+
+nlohmann JSON 3.12.0, Copyright (c) 2013-2025 Niels Lohmann. MIT license; complete text in LICENSES/nlohmann-json-MIT.txt.
+
+Adapted NumPy 1.26.4 scalar selection and float32 trigonometric arithmetic, Copyright (c) 2005-2023 NumPy Developers. BSD terms in LICENSES/NumPy-BSD.txt. Python wrappers and unrelated type implementations are excluded. Adaptations preserve the tested reference arithmetic.
+
+Codec preprocessing was ported to native C++ against codec-video-prep 0.2.5, source commit b03fe0a7db4a96f34816eeee8159618c08d8dd35 (https://github.com/YunyaoYan/codec-video-prep). The upstream metadata declares MIT. Its permission/warranty text is retained in sdk/lib/LICENSES/codec-video-prep-MIT.txt, without inventing an absent original copyright notice. The original Python extension is not included.
+
+The native SDK statically includes OpenCV 4.5.4, ICU 70.1, libjpeg-turbo 2.1.2 and zlib 1.2.11, with the recorded Ubuntu distribution patches. The complete upstream ICU license, including third-party dictionary terms, is in LICENSES/ICU.txt. The SDK also includes the Ubuntu packaging notice in sdk/lib/LICENSES/ICU-Ubuntu.txt. See LICENSING.md and sdk/lib/LICENSES/ for the other terms.
+
+The SDK links to two separately namespaced, patched FFmpeg shared libraries for pixel and bitcost decoding under LGPL-2.1-or-later. CONFIG_GPL, CONFIG_NONFREE and CONFIG_VERSION3 are disabled. See LICENSES/FFmpeg.md for license texts and sdk/ffmpeg/ffmpeg-source.tar.xz for corresponding source, patches, build scripts and symbol maps. Follow sdk/ffmpeg/README.md to rebuild and replace either shared library. Applicable rights to modify/relink the LGPL portions and debug those modifications are preserved.
+
+Qualcomm Genie and the Rust tokenizer are statically linked. See sdk/lib/THIRD_PARTY_NOTICES.txt for the Qualcomm terms and the tokenizer dependency licenses.
+
+The shared Pandora Runtime is distributed under Apache-2.0; see LICENSES/Apache-2.0.txt.
+
+Matched QNN user-space host/Stub/Skel runtime libraries and the required HTP extension are supplied alongside the native library in sdk/lib/qnn248/, with the vendor license and notices. Model weights, device BSP/firmware, native LMS and Python dependency packages are supplied separately. These scopes are distinct from the statically linked components above. No component is relicensed by the APLUX-scoped agreement.
+
+The default demo video (demo/media/cafe.mp4), sample video (demo/samples/cafe15.mp4) and sample image (demo/samples/cafe-frame.png) are derived from the MEVA dataset by Kitware Inc. and IARPA under CC BY 4.0. See demo/media/README.md for the source clip, modifications and license. Upstream model revision 5c78cab61938e73859b63724d9bf5cb88c477eaa declares Apache-2.0 in its model card; model weights and LUT/tokenizer data assets remain separately supplied; all vendor components retain their own terms and are not covered by a blanket proprietary grant.
+
+OpenSSL is statically linked. Its applicable license and notices are in sdk/lib/LICENSES/OpenSSL.txt.
+
+The Demo installs huggingface_hub from the Python package index to provide the official Hugging Face CLI. The package is installed separately under its upstream Apache-2.0 terms.
