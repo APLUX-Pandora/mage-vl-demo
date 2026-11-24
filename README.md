@@ -9,7 +9,11 @@ Mage-VL answers questions about text, images and video on a device NPU. The Web 
 
 Based on [Mage-VL](https://huggingface.co/microsoft/Mage-VL).
 
-**Demo recording** [Watch the demonstration](https://huggingface.co/APLUX-Pandora/Mage-VL/resolve/main/media/demo.mp4) · [Footage and recording credits](docs/recording.md)
+**Demo recording**
+
+https://github.com/user-attachments/assets/00519396-9ca5-42f2-b287-c37df4b0c5c3
+
+[Footage and recording credits](docs/recording.md)
 
 <a id="1-create-an-environment-and-install"></a>
 
